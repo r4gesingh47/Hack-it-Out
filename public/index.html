@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="common.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div id="wlcm">
+        <h1>Hello</h1>
+        <h2>Are you a patient or a doctor?</h2>
+            <div class="options">
+                <button id="patient"class="btn ">Patient</button>
+                <button id="doctor"class="btn ">Doctor</button>
+            </div>
+       </div>
+        <div id="login-form"class="login-form">
+            <h1>Login Form</h1>
+            <form id="login"action="pauth" method="POST">
+              <input id="uid"type="text" name="uid" placeholder="UniqueID" required>
+              <input id="psw"type="password" name="password" placeholder="Password" required>
+              <input type="submit">
+            </form>
+          </div>
+    </div>
+ <script>
+     var person="patient";
+     const patient=document.getElementById('patient');
+     patient.addEventListener('click',()=>{
+        person=patient.innerText.toLowerCase();
+        console.log(person);
+        displaylogin(person);
+     });
+     const doctor=document.getElementById('doctor');
+     doctor.addEventListener('click',()=>{
+        person=doctor.innerText.toLowerCase();
+        console.log(person);
+        displaylogin(person);
+     });
+     function displaylogin(user){
+         const login=document.getElementById("login-form");
+         document.getElementById('wlcm').style['display']="none";
+         login.childNodes[1].innerText=user.toUpperCase();
+         login.style['display']="block";
+         if(user=="patient")
+            document.getElementById('login').action="pauth";
+        else
+            document.getElementById('login').action="dauth";
+        }
+ </script>   
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="doctor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">
+            <div class="box1-a">
+                
+            </div>
+            <div class="box1-b">
+                <div class="filter">
+                    <form action="">
+                        <input id="pid"type="text" placeholder="Patient ID">
+                        <button type="submit"onclick="getData(event);return false;"><i class="fa fa-search"></i></button>
+                        <label for="record-date">Date</label>
+                        <input type="date"id="record-date">
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+        <div class="box2">
+            <div class="profile">
+                <i class="fa fa-id-badge fa-5x"></i>
+                <p>Sudarshan Rao</p>
+                <a href="#">LogOut</a>
+            </div>
+            <hr>
+            <div class="details">
+                <p>Doctor Id : 1206d</p>
+                <p>Name : Srao</p>
+                <p>Age : 21</p>
+                <p>Gender : Male</p>
+                <p>Address :  12,lanka Delhi</p>
+                <p>Phone No : 234254262342</p>
+                <p>Employeed At : Fortis Hospital</p>
+                <p>Patients Viewed : 102</p>
+            </div>
+        </div>
+    </div>
+<script src="doctor.js"></script>
+</body>
+</html>
