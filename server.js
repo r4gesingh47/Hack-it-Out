@@ -28,6 +28,29 @@ app.get('/',(req,res)=>{
     res.send('index.html');
 });
 
+
+app.post('/getpatient',(req,res)=>{
+    var user=req.body.pid;
+    MongoClient.connect(url, function(err, db) {
+
+        if(err)
+            throw err;
+        var dbo=db.db("checkup");
+        var query={pid:user};
+        dbo.collection("patient_details").find(query).toArray(function(err, result) {
+            if (err) throw err;
+            if(result.length>0)
+            {
+                res.send(result);
+            }
+            else{
+                res.send({});
+            }
+            db.close();
+          });
+    });
+});
+
 app.get('/getpdata',(req,res)=>{
         var user=req.session.username;
         console.log(user);

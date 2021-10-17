@@ -57,13 +57,15 @@
     display:none;
 }
 .show{
+    display: block;
+}
+.show{
     display:block;
 }
 
 .record{
     background-color: var(--bg-main);
     margin-bottom: 1em;
-    
 }
 
 

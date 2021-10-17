@@ -1,4 +1,6 @@
 
+
+
 fetch('http://localhost:3000/getpdata')
   .then(function (response) {
     return response.json();
@@ -12,13 +14,13 @@ fetch('http://localhost:3000/getpdata')
   .catch(function (error) {
     console.log("Error: " + error);
   });
-
+setTimeout(300);
 function add_record(e)
 {
     for(var i=0;i<e.records.length;i++)
     {
         var div=`
-        <div class="record  ${e.records[i].date}">
+        <div class="record ${e.records[i].date}">
                     <p>Date : ${e.records[i].date}</p>
                     <p>Location : ${e.records[i].location}</p>
                     <p>Age at Visit : ${e.records[i].age}</p>
@@ -45,31 +47,3 @@ function add_details(e)
     document.getElementById('detail').innerHTML=cont;
 }
 
-const elements=document.getElementsByClassName("record");
-    const date=document.getElementById("record-date");
-    date.onchange=()=>{
-        var val=date.value;
-        console.log(val);
-        if(val!="")
-        {
-           var todate=document.getElementsByClassName('record');
-           for(var i=0;i<todate.length;i++)
-           {
-               todate[i].classList.add('default');
-           }
-           todate=document.getElementsByClassName(val);
-           for(var i=0;i<todate.length;i++)
-           {
-               todate[i].classList.remove('default');
-           }
-
-        }
-        else{
-            var todate=document.getElementsByClassName('record');
-            for(var i=0;i<elements.length;i++)
-           {
-               todate[i].classList.remove('default');
-           }
-        }
-        
-    };
